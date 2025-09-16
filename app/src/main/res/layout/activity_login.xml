@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/cormorant_sc_semibold"
-        android:text="Cadastre-se ao Luna"
+        android:text="Bem vindo ao Luna"
         android:textColor="#000000"
         android:textColorLink="#471832"
         android:textSize="34sp"
