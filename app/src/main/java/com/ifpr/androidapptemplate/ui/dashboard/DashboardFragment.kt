@@ -19,7 +19,6 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.storage.StorageReference
 import com.ifpr.androidapptemplate.R
 import com.ifpr.androidapptemplate.baseclasses.Item
 import com.ifpr.androidapptemplate.databinding.FragmentDashboardBinding
@@ -39,6 +38,7 @@ class DashboardFragment : Fragment() {
     private lateinit var selectImageButton: Button
     private lateinit var databaseReference: DatabaseReference
     private lateinit var auth: FirebaseAuth
+    private
 
     companion object {
         private const val PICK_IMAGE_REQUEST = 1
@@ -65,7 +65,7 @@ class DashboardFragment : Fragment() {
         itemImageView = view.findViewById(R.id.image_item)
         salvarButton = view.findViewById(R.id.salvarItemButton)
         selectImageButton = view.findViewById(R.id.button_select_image)
-        enderecoEditText = view.findViewById(R.id.enderecoItemEditText)
+        enderecoEditText = view.findViewById(R.id.primeiroDia)
         //TODO("Capture aqui os outro campos que foram inseridos no layout. Por exemplo, ate
         // o momento so foi capturado o endereco (EditText)")
 
@@ -151,7 +151,7 @@ class DashboardFragment : Fragment() {
                         .show()
                     requireActivity().supportFragmentManager.popBackStack()
                 }.addOnFailureListener {
-                    Toast.makeText(context, "Falha ao cadastrar o item", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Falha ao cad   astrar o item", Toast.LENGTH_SHORT).show()
                 }
         } else {
             Toast.makeText(context, "Erro ao gerar o ID do item", Toast.LENGTH_SHORT).show()

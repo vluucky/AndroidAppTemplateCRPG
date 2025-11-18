@@ -77,13 +77,13 @@ class HomeFragment : Fragment() {
                         val imageView = itemView.findViewById<ImageView>(R.id.item_image)
                         val enderecoView = itemView.findViewById<TextView>(R.id.item_endereco)
 
-                        enderecoView.text = "Endereço: ${item.endereco ?: "Não informado"}"
+                        enderecoView.text = "Dia: ${item.primeiroDia ?: "Não informado"}"
 
                         if (!item.imageUrl.isNullOrEmpty()) {
                             Glide.with(container.context).load(item.imageUrl).into(imageView)
-                        } else if (!item.base64Image.isNullOrEmpty()) {
+                        } else if (!item.segundoDia.isNullOrEmpty()) {
                             try {
-                                val bytes = Base64.decode(item.base64Image, Base64.DEFAULT)
+                                val bytes = Base64.decode(item.segundoDia, Base64.DEFAULT)
                                 val bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
                                 imageView.setImageBitmap(bitmap)
                             } catch (_: Exception) {}
